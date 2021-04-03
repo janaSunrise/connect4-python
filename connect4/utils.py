@@ -1,7 +1,8 @@
 import numpy as np
 import pygame
 
-from . import COLUMN_COUNT, RADIUS, ROW_COUNT, SQUARESIZE, colors, height, screen
+from connect4 import COLUMN_COUNT, RADIUS, ROW_COUNT, SQUARESIZE, height, screen
+from .colors import Colors
 
 
 def create_board():
@@ -21,9 +22,6 @@ def get_next_open_row(board, col):
     for r in range(ROW_COUNT):
         if board[r][col] == 0:
             return r
-
-def print_board(board):
-    print(np.flip(board, 0))
 
 
 def winning_move(board, piece):
@@ -52,10 +50,10 @@ def winning_move(board, piece):
 def draw_board(board):
     for c in range(COLUMN_COUNT):
         for r in range(ROW_COUNT):
-            pygame.draw.rect(screen, colors.BLUE, (c * SQUARESIZE, r * SQUARESIZE + SQUARESIZE, SQUARESIZE, SQUARESIZE))
+            pygame.draw.rect(screen, Colors.BLUE, (c * SQUARESIZE, r * SQUARESIZE + SQUARESIZE, SQUARESIZE, SQUARESIZE))
             pygame.draw.circle(
                 screen,
-                colors.BLACK,
+                Colors.BLACK,
                 (int(c * SQUARESIZE + SQUARESIZE / 2),
                 int(r * SQUARESIZE + SQUARESIZE + SQUARESIZE / 2)),
                 RADIUS
@@ -66,7 +64,7 @@ def draw_board(board):
             if board[r][c] == 1:
                 pygame.draw.circle(
                     screen,
-                    colors.RED,
+                    Colors.RED,
                     (int(c * SQUARESIZE + SQUARESIZE / 2),
                     height - int(r * SQUARESIZE + SQUARESIZE / 2)),
                     RADIUS
@@ -74,7 +72,7 @@ def draw_board(board):
             elif board[r][c] == 2: 
                 pygame.draw.circle(
                     screen,
-                    colors.YELLOW,
+                    Colors.YELLOW,
                     (int(c * SQUARESIZE + SQUARESIZE / 2),
                     height - int(r * SQUARESIZE + SQUARESIZE / 2)),
                     RADIUS
