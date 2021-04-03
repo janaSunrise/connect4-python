@@ -13,6 +13,7 @@ turn = 0
 
 # Initialize
 pygame.init()
+pygame.display.set_caption("Connect4 Python!")
 
 # Setup the screens
 draw_board(board)
