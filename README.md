@@ -4,7 +4,7 @@ The classic connect 4 multiplayer friends rewritten in python using the python f
 
 ## How it looks?
 
-![Image of the connect4 Game](https://github.com/janaSunrise/A-path-finding-visualization/blob/main/images/connect4.png)
+![Image of the connect4 Game](https://github.com/janaSunrise/connect4-python/blob/main/images/connect4.png)
 
 ## How to run it?
 
